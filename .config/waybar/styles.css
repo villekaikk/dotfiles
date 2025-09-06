@@ -1,0 +1,85 @@
+/* ~/.config/waybar/styles.css */
+@import url("/home/ville/.cache/wal/colors-waybar.css");
+
+
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    /* min-height: 0px; */
+    background-color: transparent;
+    color: @color5;
+}
+
+window#waybar {
+    border-radius: 16px;
+    margin: 0px 16px;
+    margin-top: 0px;
+}
+
+
+.modules-left, .modules-center, .modules-right {
+    background-color: rgba(0, 1, 0, 0.464);
+    border-radius: 60px;
+    padding: 0 6px;
+    margin: 0 6 14 6px;
+}
+
+#window {
+    padding: 0 12px;
+    margin: 0;
+}
+
+#tray {
+    padding: 0 8px;
+    margin: 0 2px;
+}
+
+#tray menu {
+    background-color: rgba(0, 1, 0, 0.464);
+}
+
+#cpu,
+#memory,
+#custom-gpu,
+#language,
+#network,
+#pulseaudio,
+#pulseaudio.microphone,
+#clock,
+#battery,
+#backlight {
+    padding: 0 4px;
+    margin: 0 2px;
+    min-width: 24px;
+}
+
+#clock {
+    font-weight: 800;
+    min-width: 200px;
+}
+
+#network.disconnected,
+#pulseaudio.muted,
+#pulseaudio.microphone.muted {
+    color: #f53c3c;
+}
+
+#custom-separator {
+    color: rgba(255, 255, 255, 0.244);
+    padding: 0 4px;
+    margin: 0 2px;
+    font-size: 18px;
+}
+
+tooltip {
+    background: rgba(34, 34, 34, 0.869);
+    border: 1px solid #ABC2AB;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+tooltip label {
+    color: #ABC2AB;
+    font-size: 13px;
+}

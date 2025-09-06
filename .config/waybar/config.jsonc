@@ -1,0 +1,175 @@
+{
+    "output": "DP-3",
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": false,
+    "height": 32,
+    "margin-top": 6,
+    "margin-left": 16,
+    "margin-right": 16,
+    "margin-bottom": -14,
+    "modules-left": [
+        "clock",
+        "custom/separator",
+        "tray"
+    ],
+    "modules-center": [
+        "custom/spotify"
+    ],
+    "modules-right": [
+        "cpu",
+        "custom/gpu",
+        "memory",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "custom/notification",
+        "custom/power"
+    ],
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": "{:%a, %B %d  %H:%M:%S}",
+        "interval": 1,
+        "rotate": 0,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "timezone": "Europe/Helsinki",
+        "locale": "fi_FI.UTF-8",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "format": {
+                "months": "<span color='#478061'><b>{}</b></span>",
+                "days": "<span color='#ABC2AB'>{}</span>",
+                "today": "<span color='red'><b>{}</b></span>",
+                "weekdays": "<span color='#478061'><b>{}</b></span>",
+                "weeks": "<span color='#75aabf'><b>W{:%W}</b></span>"
+            }
+        }
+    },
+
+    "custom/spotify": {
+        "exec": "~/.config/venv/bin/python ~/.config/scripts/mediaplayer.py --player spotify",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "playerctl -p spotify next",
+        "on-scroll-up": "playerctl -p spotify volume 0.01+",
+        "on-scroll-down": "playerctl -p spotify volume 0.01-",
+        "format": "{}",
+        "return-type": "json",
+        "max-length": 50,
+        "hide-empty-text": true
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": true,
+        "format-muted": " Muted",
+        "on-click": "pavucontrol",
+        "scroll-step": 1,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["","", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " MUTED",
+        "scroll-step": 1,
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+        "on-click": "pavucontrol"
+    },
+
+    "memory": {
+        "states": {
+            "c": 90,
+            "h": 60,
+            "m": 30
+        },
+        "interval": 5,
+        "format": "󰾆 {percentage}%",
+        "format-m": "󰾅 {percentage}%",
+        "format-h": "󰓅 {percentage}%",
+        "format-c": " {percentage}%",
+        "format-alt": "󰾆 {percentage}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "Memory\n󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "󰍛 {usage}%",
+        "min-length": 5
+    },
+
+    "custom/gpu": {
+        "exec": "cat /sys/class/hwmon/hwmon2/device/gpu_busy_percent",
+        "format": " {}%",
+        "return-type": "",
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "GPU\n{}%",
+        "min-length": 5
+    },
+
+    "custom/separator": {
+        "format": "⦀",
+        "tooltip": false
+    },
+
+    "network": {
+        "tooltip": true,
+        "format-ethernet": "<span>  {bandwidthDownBytes}</span> <span>  {bandwidthUpBytes}</span>",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nGateway: <b>{gwaddr}</b>",
+        "format-disconnected": "󰖪",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 2,
+        "min-length": 24
+    },
+
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "on-click": "wleave -b 4"
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂚",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󱅫",
+            "inhibited-none": "󰂚",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true,
+        "min-length": 3
+    }
+}
