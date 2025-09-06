@@ -1,11 +1,5 @@
 /*
-
-!/.config/hypr/
-!/.config/kitty/
-!/.config/wlogout/
-!/.config/waybar/
-!/.config/rofi/
-!/.config/scripts/
+!/.config
 
 !.zshenv
 !.zshrc
