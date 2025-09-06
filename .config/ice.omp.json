@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "os": "#ACB0BE",
+        "closer": "p:os",
+        "pink": "#F4B8E4",
+        "lavender": "#BABBF1",
+        "blue":  "#8CAAEE",
+        "purple": "#ae8bff",
+        "white": "#ffffff",
+        "iceblue": "#9cd7ff",
+        "iceblue2": "#b5f4ff",
+        "icewhite": "#fffffa"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "p:os",
+          "style": "plain",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        }, 
+        {
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "foreground": "p:icewhite",
+          "style": "plain",
+          "template": "{{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "foreground": "p:iceblue",
+          "style": "plain",
+          "template": "{{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "p:iceblue2",
+          "properties": {
+            "folder_icon": "...",
+            "home_icon": "~",
+            "style": "agnoster_short",
+            "max_depth": 2,
+            "folder_separator_icon": "/"
+          },
+          "style": "plain",
+          "template": "{{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "p:white",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }} ",
+          "style": "plain",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "p:iceblue",
+          "foreground": "#000000",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \uebd8 {{ .Name }} ",
+          "type": "az"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "<b>\u2570\u2500 </b>",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": false,
+  "version": 3
+}

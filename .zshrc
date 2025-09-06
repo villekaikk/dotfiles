@@ -19,7 +19,7 @@ bindkey "^[[2;5~" copy            # ctrl + insert
 
 export PS1="%{$(tput setaf 39)%}%n%{$(tput setaf 45)%}@%{$(tput setaf 51)%}%m %{$(tput setaf 195)%}%2d~ %{$(tput sgr0)%}$ "
 
-eval "$(oh-my-posh init zsh --config ~/Documents/git/profile/ice.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/ice.omp.json)"
 
 HISTSIZE=100000
 HISTFILE=~/.zsh_history
