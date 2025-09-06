@@ -1,0 +1,52 @@
+* {
+    background-image: none;
+    transition: 20ms;
+    box-shadow: none;
+}
+
+window {
+  background-color: rgba(12, 12, 12, 0.523);
+}
+
+button {
+    color: #b6b6b6;
+    background-color: rgba(0, 0, 0, 0.375);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    border: none;
+	  border-radius: 10px;
+	  outline-style: none;
+    margin-top:300px;
+    margin-bottom:300px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#lock {
+    background-image: url("/usr/share/wleave/icons/lock.svg"),
+    url("/usr/local/share/wleave/icons/lock.svg");
+}
+
+#reboot {
+	background-image: url("/usr/share/wleave/icons/reboot.svg"),
+    url("/usr/local/share/wleave/icons/reboot.svg");
+}
+
+#logout {
+    background-image: url("/usr/share/wleave/icons/logout.svg"),
+    url("/usr/local/share/wleave/icons/logout.svg");
+}
+
+#shutdown {
+	background-image: url("/usr/share/wleave/icons/shutdown.svg"),
+    url("/usr/local/share/wleave/icons/shutdown.svg");
+}
+
+button:hover {
+  color: rgba(0, 0, 0, 0.633);
+  font-weight: bold;
+  background-color: rgba(238, 238, 238, 0.464);
+  outline-style: none;
+  background-size: 25%;
+}
