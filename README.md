@@ -10,13 +10,14 @@ Wallpapers are randomized to both of my monitors from my wallpaper directory on 
 ![Overview](docs/github_background.gif)
 
 ## Software used
-- window manager: hyprland
-- terminal: kitty
-- app launcher: rofi
-- top bar: waybar
-- notifications: swaync
+- window manager: [hyprland](https://github.com/hyprwm/HyprlandV)
+- terminal: [kitty](https://github.com/kovidgoyal/kitty)
+- app launcher: [rofi](https://github.com/davatorium/rofi)
+- top bar: [waybar](https://github.com/Alexays/Waybar)
+- notifications: [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - audio server: pipewire
-- wallpaper daemon: swww
-- wallpaper color scanning tool: pywal
+- wallpaper daemon: [swww](https://github.com/LGFae/swww)
+- color scheme scan: [pywal](https://github.com/dylanaraps/pywal)
+- screenshots: [hyprshot](https://github.com/Gustash/Hyprshot)
 
 Some custom scripts and programs included
