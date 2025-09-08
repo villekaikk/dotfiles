@@ -5,9 +5,9 @@ from shutil import copyfile, rmtree
 
 import os
 
-
-WALLPAPER_DIR = ""
-CACHE_DIR = ""
+HOME_DIR = os.path.expanduser('~')
+WALLPAPER_DIR = f"{HOME_DIR}/Pictures/Wallpapers"
+CACHE_DIR = f"{HOME_DIR}/.cache/wallpapers"
 ALLOWED_FILE_TYPES = ["png", "jpg", "jpeg"]
 
 
@@ -39,7 +39,7 @@ def clear_directory(dir_path: str) -> None:
 
     if os.path.exists(dir_path):
         rmtree(dir_path)
-        #print(f"Removed directory {dir_path}")
+        # print(f"Removed directory {dir_path}")
 
     os.makedirs(dir_path)
 
@@ -57,7 +57,7 @@ def cache_wallpapers(items: List[str]) -> None:
 def main():
     
     wallpapers = get_all_wallpapers()
-    #print(f"{len(wallpapers)} wallpapers found")
+    # print(f"{len(wallpapers)} wallpapers found")
 
     if not wallpapers:
         #print("No wallpapers found")
