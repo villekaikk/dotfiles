@@ -5,8 +5,8 @@ configuration {
     display-drun:               " Apps";
     display-run:                " Run";
     display-filebrowser:        " Files";
-	  drun-display-format:        "{icon} {name}";
-	  window-format:              "{w}{c} | {t}";
+    drun-display-format:        "{icon} {name}";
+    window-format:              "{w}{c} | {t}";
 }
 
 @import "~/.cache/wal/colors-rofi-dark.rasi"
